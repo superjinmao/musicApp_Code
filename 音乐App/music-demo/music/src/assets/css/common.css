@@ -1,0 +1,40 @@
+html{
+    background-color: #f3f4f9;
+}
+img[lazy=loading] {
+    transform: scale(.3);
+}
+.page-info-list{
+    height: calc(100vh - 490px);
+    overflow: hidden;
+}
+.page-view-list{
+    height: calc(100vh - 200px);
+    overflow: hidden;
+    margin-top: 90px;
+}
+.page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 以上几点样式是为了让该div填满整个区域，距离4个方向的距离都为0，即为填满 */
+    background-color: #f3f4f9;
+    z-index: 9999;
+    /* 不固定宽高，让其可以滚动 */
+    overflow: scroll;
+}
+.slide-enter-active,.slide-leave-active{
+    transition: all .3s;
+    /* 进入后的状态和离开前的状态一样，都是位于页面的正中间*/
+}
+.slide-enter,.slide-leave-to{
+    /*  进入之前的状态，离开之后的状态 */
+    /* 本来进入后的位置是在页面正中间，但是我让它在进入之前向右偏移100% */
+    /* 本来离开之前的位置是页面正中间，但是我让它离开之后向有偏移100% */
+    transform: translate3d(100%, 0, 0);
+}
+.mt90{
+    margin-top: 90px;
+}
